@@ -20,6 +20,7 @@ Route::get('/Teams', ['middleware' => 'auth', 'uses' => 'PageController@Teams'])
 Route::get('/Organisatie', ['middleware' => 'auth', 'uses' => 'PageController@Organisatie']);
 Route::get('/Historie', ['middleware' => 'auth', 'uses' => 'PageController@Historie']);
 Route::get('/Profiel', ['middleware' => 'auth', 'uses' => 'PageController@Profiel']);
+Route::get('/CMS', ['middleware' => 'auth', 'uses' => 'PageController@CMS']);
 
 
 Auth::routes();
