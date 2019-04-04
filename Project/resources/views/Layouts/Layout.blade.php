@@ -28,6 +28,7 @@
     <noscript>
         <link rel="stylesheet" href="{{ asset('css/footer.css') }}"></noscript>
 
+
 </head>
 
 <body>
@@ -63,6 +64,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/CMS">CMS</a>
                 </li>
+                <div class="topnav-right">
+                <li class="nav-item">
+                    <a class="nav-link" href="/Profiel">Profiel</a>
+                </li>
+                </div>
             </ul>
             
         </div>
