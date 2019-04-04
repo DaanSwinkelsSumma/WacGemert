@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+// Basic pages
+Route::get('/Competitie', ['middleware' => 'auth', 'uses' => 'PagesController@Competitie']);
+Route::get('/Beker', ['middleware' => 'auth', 'uses' => 'PagesController@Beker']);
+Route::get('/Teams', ['middleware' => 'auth', 'uses' => 'PagesController@Teams']);
+Route::get('/Organisatie', ['middleware' => 'auth', 'uses' => 'PagesController@Organisatie']);
+Route::get('/Historie', ['middleware' => 'auth', 'uses' => 'PagesController@Historie']);
+Route::get('/Profiel', ['middleware' => 'auth', 'uses' => 'PagesController@Profiel']);
+

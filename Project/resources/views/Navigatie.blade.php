@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-@section('content')
+@section('navigatie')
     <div class="flex-center position-ref full-height">
         @if (Route::has('login'))
             <div class="top-right links">
@@ -18,7 +18,7 @@
 
         <div class="content">
             <div class="title m-b-md">
-                Wac Gemert
+                Laravel
             </div>
 
             <div class="links">

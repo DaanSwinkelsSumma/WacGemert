@@ -1,5 +1,17 @@
 @extends('layouts.layout')
 
+
+@section('navigatie')
+<div class="links">
+    <a href="/Competitie">Competitie</a>
+    <a href="/Beker">Competitie</a>
+    <a href="/Teams">Competitie</a>
+    <a href="/Organisatie">Competitie</a>
+    <a href="/Historie">Competitie</a>
+    <a href="/Profiel">Competitie</a>
+</div>
+@endsection
+
 @section('content')
     <div class="flex-center position-ref full-height">
         @if (Route::has('login'))
@@ -18,7 +30,7 @@
 
         <div class="content">
             <div class="title m-b-md">
-                Wac Gemert
+                Organisatie
             </div>
 
             <div class="links">

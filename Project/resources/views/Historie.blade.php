@@ -18,7 +18,7 @@
 
         <div class="content">
             <div class="title m-b-md">
-                Wac Gemert
+                Historie
             </div>
 
             <div class="links">
