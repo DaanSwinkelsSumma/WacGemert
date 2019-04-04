@@ -33,7 +33,7 @@
 
 <body>
     <!-- Navigatie -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navigatie">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -41,37 +41,40 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/">Home </a>
+                    <a class="nav-link navigatie-tekst" href="/">Home </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Competitie">Competitie</a>
+                    <a class="nav-link navigatie-tekst" href="/Competitie">Competitie</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Beker">Beker</a>
+                    <a class="nav-link navigatie-tekst" href="/Beker">Beker</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Teams">Teams</a>
+                    <a class="nav-link navigatie-tekst" href="/Teams">Teams</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Organisatie">Organisatie</a>
+                    <a class="nav-link navigatie-tekst" href="/Organisatie">Organisatie</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Historie">Historie</a>
+                    <a class="nav-link navigatie-tekst" href="/Historie">Historie</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Sponsors">Sponsors</a>
+                    <a class="nav-link navigatie-tekst" href="/Sponsors">Sponsors</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/CMS">CMS</a>
+                    <a class="nav-link navigatie-tekst" href="/CMS">CMS</a>
                 </li>
-                <div class="topnav-right">
-                <li class="nav-item">
-                    <a class="nav-link" href="/Profiel">Profiel</a>
-                </li>
-                </div>
             </ul>
-            
         </div>
+
+        <div class="top-right">
+            <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link navigatie-tekst" href="/Profiel">Profiel</a>
+            </li>
+            </ul>
+            </div>
+
         @if (Route::has('login'))
             <div class="top-right links">
                 @auth
@@ -82,10 +85,10 @@
                 </li>
                 </div>
                 @else
-                    <a href="{{ route('login') }}">Login</a>
+                    <a class="navigatie-tekst" href="{{ route('login') }}">Login</a>
 
                     @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Register</a>
+                        <a class="navigatie-tekst" href="{{ route('register') }}">Register</a>
                     @endif
                 @endauth
             </div>
@@ -137,7 +140,6 @@
             </div>
         </div>
         <div class="footer-right">
-            @yield('PWA')
             <div class="footer-icons">
                 <a href="https://www.facebook.com/kuijpersNL/" aria-label="Facebook" target="blank"><i
                         class="fab fa-facebook-f"></i></a>
