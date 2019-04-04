@@ -14,6 +14,7 @@
 
 // Basic pages
 Route::get('/', 'PageController@index');
+// Route::get('/home', 'PageController@index');
 Route::get('/Competitie', ['middleware' => 'auth', 'uses' => 'PageController@Competitie']);
 Route::get('/Beker', ['middleware' => 'auth', 'uses' => 'PageController@Beker']);
 Route::get('/Teams', ['middleware' => 'auth', 'uses' => 'PageController@Teams']);
