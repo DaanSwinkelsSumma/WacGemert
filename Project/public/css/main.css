@@ -1,3 +1,12 @@
-topnav-right {
-    float: right;
-  }
+.navigatie{
+    background: rgba(83, 133, 214, 0.8) !important;
+    border-bottom: 10px solid #255bb2 !important;
+    padding: 0% !important;
+}
+
+.navigatie-tekst{
+    color: white !important;
+}
+.active{
+    background: rgba(83, 133, 214) !important;
+}
