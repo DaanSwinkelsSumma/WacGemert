@@ -13,10 +13,15 @@
 
 
 // Basic pages
-Route::get('/Competitie', ['middleware' => 'auth', 'uses' => 'PagesController@Competitie']);
-Route::get('/Beker', ['middleware' => 'auth', 'uses' => 'PagesController@Beker']);
-Route::get('/Teams', ['middleware' => 'auth', 'uses' => 'PagesController@Teams']);
-Route::get('/Organisatie', ['middleware' => 'auth', 'uses' => 'PagesController@Organisatie']);
-Route::get('/Historie', ['middleware' => 'auth', 'uses' => 'PagesController@Historie']);
-Route::get('/Profiel', ['middleware' => 'auth', 'uses' => 'PagesController@Profiel']);
+Route::get('/', 'PageController@index');
+Route::get('/Competitie', ['middleware' => 'auth', 'uses' => 'PageController@Competitie']);
+Route::get('/Beker', ['middleware' => 'auth', 'uses' => 'PageController@Beker']);
+Route::get('/Teams', ['middleware' => 'auth', 'uses' => 'PageController@Teams']);
+Route::get('/Organisatie', ['middleware' => 'auth', 'uses' => 'PageController@Organisatie']);
+Route::get('/Historie', ['middleware' => 'auth', 'uses' => 'PageController@Historie']);
+Route::get('/Profiel', ['middleware' => 'auth', 'uses' => 'PageController@Profiel']);
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

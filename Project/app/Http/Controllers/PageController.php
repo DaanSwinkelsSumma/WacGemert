@@ -17,6 +17,11 @@ class PageController extends Controller
         //
     }
 
+    public function index()
+    {
+        return view('welcome');
+    }
+
     public function Competitie()
     {
         return view('Competitie');
@@ -33,7 +38,6 @@ class PageController extends Controller
     {
         return view('Teams');
     }
-
 
     
     public function Organisatie()
