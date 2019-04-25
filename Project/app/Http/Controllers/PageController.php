@@ -59,7 +59,7 @@ class PageController extends Controller
     
     public function CMS()
     {
-        return view('Beheersysteem');
+        return view('Admin/Beheersysteem');
     }
 
 }
