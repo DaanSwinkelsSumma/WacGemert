@@ -14,7 +14,7 @@
 Auth::routes();
 // Basic pages
 Route::get('/', 'PageController@index');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'PageController@index')->name('home');
 Route::get('/Competitie', ['middleware' => 'auth', 'uses' => 'PageController@Competitie']);
 Route::get('/Beker', ['middleware' => 'auth', 'uses' => 'PageController@Beker']);
 Route::get('/Teams', ['middleware' => 'auth', 'uses' => 'PageController@Teams']);
@@ -24,8 +24,10 @@ Route::get('/Profiel', ['middleware' => 'auth', 'uses' => 'PageController@Profie
 Route::get('/CMS', ['middleware' => 'auth', 'uses' => 'PageController@CMS']);
 
 //User
-Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::get('/Logout', '\App\Http\Controllers\UserController@Logout');
 
 
+//Calendar
+Route::get('events', 'CompetitieController@index');
 
 

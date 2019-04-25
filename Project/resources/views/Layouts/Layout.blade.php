@@ -7,6 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Wac-Gemert</title>
 
+    @yield('style')
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
@@ -146,11 +147,14 @@
                         class="fab fa-instagram"></i></a>
             </div>
             <div class="footer-logoff profilepage">
-                <button class="btn btn-secondary" href="{{ url('/logout') }}"> logout </button>
+                <a href="{{ url('/Logout') }}">
+                    <button class="btn btn-secondary" > logout </button>
+                </a>
             </div>
 
         </div>
     </footer>
+    @yield('script')
 </body>
 
 </html>

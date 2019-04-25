@@ -2,6 +2,12 @@
 
 return [
 
+    'providers' => [
+        MaddHatter\LaravelFullcalendar\ServiceProvider::class,
+    ],
+    'aliases' => [
+        'Calendar' => MaddHatter\LaravelFullcalendar\Facades\Calendar::class,
+    ],
     /*
     |--------------------------------------------------------------------------
     | Application Name
