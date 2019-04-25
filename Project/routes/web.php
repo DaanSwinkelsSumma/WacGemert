@@ -22,6 +22,7 @@ Route::get('/Organisatie', ['middleware' => 'auth', 'uses' => 'PageController@Or
 Route::get('/Historie', ['middleware' => 'auth', 'uses' => 'PageController@Historie']);
 Route::get('/Profiel', ['middleware' => 'auth', 'uses' => 'PageController@Profiel']);
 Route::get('/CMS', ['middleware' => 'auth', 'uses' => 'PageController@CMS']);
+Route::get('/Standen', ['middleware' => 'auth', 'uses' => 'PageController@Standen']);
 
 //User
 Route::get('/Logout', '\App\Http\Controllers\UserController@Logout');
