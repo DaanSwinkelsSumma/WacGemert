@@ -19,7 +19,7 @@ class PageController extends Controller
 
     public function index()
     {
-        return view('welcome');
+        return view('home');
     }
 
     public function Competitie()
@@ -60,6 +60,11 @@ class PageController extends Controller
     public function CMS()
     {
         return view('Admin/Beheersysteem');
+    }
+
+    public function Standen()
+    {
+        return view('Admin/Standen');
     }
 
 }
