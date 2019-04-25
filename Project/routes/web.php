@@ -23,7 +23,6 @@ Route::get('/Historie', ['middleware' => 'auth', 'uses' => 'PageController@Histo
 Route::get('/Profiel', ['middleware' => 'auth', 'uses' => 'PageController@Profiel']);
 Route::get('/CMS', ['middleware' => 'auth', 'uses' => 'PageController@CMS']);
 
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

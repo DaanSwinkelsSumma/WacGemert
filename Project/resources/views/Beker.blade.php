@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-    <div class="flex-center position-ref full-height">
+    <!-- <div class="flex-center position-ref full-height">
         @if (Route::has('login'))
             <div class="top-right links">
                 @auth
@@ -31,5 +31,12 @@
                 <a href="https://github.com/laravel/laravel">GitHub</a>
             </div>
         </div>
-    </div>
+    </div> -->
+    <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>Beker</h1>
+                </div>
+            </div>
+        </div>
 @endsection

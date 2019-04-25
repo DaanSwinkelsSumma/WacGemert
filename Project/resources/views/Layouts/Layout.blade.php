@@ -28,7 +28,12 @@
     <noscript>
         <link rel="stylesheet" href="{{ asset('css/footer.css') }}"></noscript>
 
-
+    <style>
+        h1{
+            margin-top: 10px;
+            margin-bottom: 249px;
+        }
+    </style>
 </head>
 
 <body>
@@ -40,28 +45,28 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
-                <li class="nav-item active">
+                <li class="nav-item navblock">
                     <a class="nav-link navigatie-tekst" href="/">Home </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item navblock">
                     <a class="nav-link navigatie-tekst" href="/Competitie">Competitie</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item navblock">
                     <a class="nav-link navigatie-tekst" href="/Beker">Beker</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item navblock">
                     <a class="nav-link navigatie-tekst" href="/Teams">Teams</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item navblock">
                     <a class="nav-link navigatie-tekst" href="/Organisatie">Organisatie</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item navblock">
                     <a class="nav-link navigatie-tekst" href="/Historie">Historie</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item navblock">
                     <a class="nav-link navigatie-tekst" href="/Sponsors">Sponsors</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item navblock">
                     <a class="nav-link navigatie-tekst" href="/CMS">CMS</a>
                 </li>
             </ul>
@@ -79,11 +84,11 @@
             <div class="top-right links">
                 @auth
                     <!-- <a href="{{ url('/home') }}">Home</a> -->
-                    <div class="topnav-right">
+                    <!-- <div class="topnav-right">
                 <li class="nav-item">
                     <a class="nav-link" href="/Profiel">Profiel</a>
                 </li>
-                </div>
+                </div> -->
                 @else
                     <a class="navigatie-tekst" href="{{ route('login') }}">Login</a>
 
@@ -127,7 +132,7 @@
                 <a target="blank" aria-label="Locatie"
                     href="https://www.google.nl/maps/place/Panovenweg+20,+5708+HR+Helmond/@51.4738781,5.6267348,17z/data=!3m1!4b1!4m5!3m4!1s0x47c7214f44307933:0x16bd59b2e5452121!8m2!3d51.4738748!4d5.6289235"
                     rel="noopener">
-                    <p><span>Panovenweg 20</span> Helmond, Nederland</p>
+                    <p>Gemert</p>
                 </a>
             </div>
             <div>
@@ -136,7 +141,7 @@
             </div>
             <div>
                 <i class="fas fa-envelope"></i>
-                <p><a href="mailto:kuijpers@kuijpers.com" aria-label="Email">kuijpers@kuijpers.com</a></p>
+                <p><a href="mailto:kuijpers@kuijpers.com" aria-label="Email">info@wac-gemert.nl</a></p>
             </div>
         </div>
         <div class="footer-right">
@@ -153,13 +158,7 @@
                         class="fab fa-instagram"></i></a>
             </div>
             <div class="footer-logoff profilepage">
-                <a class="fas fa-power-off socialiconhover" aria-label="Uitloggen" href="{{ route('logout') }}" onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
-                    <p>Uitloggen</p>
-                </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
+
             </div>
 
         </div>

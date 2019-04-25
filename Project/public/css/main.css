@@ -10,3 +10,7 @@
 .active{
     background: rgba(83, 133, 214) !important;
 }
+
+.navblock{
+    margin-right: 5px
+}
