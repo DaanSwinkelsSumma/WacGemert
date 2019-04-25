@@ -84,7 +84,6 @@
         <div class="top-right">
             <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link navigatie-tekst" href="/Profiel">Profiel</a>
             </li>
             </ul>
             </div>
@@ -92,6 +91,7 @@
         @if (Route::has('login'))
             <div class="top-right links">
                 @auth
+                <a class="nav-link navigatie-tekst" href="/Profiel">Profiel</a>
 
                 @else
                     <a class="navigatie-tekst" href="{{ route('login') }}">Login</a>
