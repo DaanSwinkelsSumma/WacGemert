@@ -66,9 +66,18 @@
                 <li class="nav-item navblock">
                     <a class="nav-link navigatie-tekst" href="/Sponsors">Sponsors</a>
                 </li>
-                <li class="nav-item navblock">
-                    <a class="nav-link navigatie-tekst" href="/CMS">CMS</a>
-                </li>
+                @if (Route::has('login'))
+                    <div class="top-right links">
+                        @auth
+                        <li class="nav-item navblock">
+                            <a class="nav-link navigatie-tekst" href="/CMS">CMS</a>
+                        </li>
+                        @else
+
+                        @endauth
+                    </div>
+                @endif
+
             </ul>
         </div>
 
@@ -83,12 +92,7 @@
         @if (Route::has('login'))
             <div class="top-right links">
                 @auth
-                    <!-- <a href="{{ url('/home') }}">Home</a> -->
-                    <!-- <div class="topnav-right">
-                <li class="nav-item">
-                    <a class="nav-link" href="/Profiel">Profiel</a>
-                </li>
-                </div> -->
+
                 @else
                     <a class="navigatie-tekst" href="{{ route('login') }}">Login</a>
 
@@ -109,22 +113,6 @@
                 <img alt="Kuijpers Logo" src="{{ asset('img/WacLogo.png') }}" class="img-fluid" id="wizlogofooter"
                     height="200" width="200">
             </a>
-            <!-- <p>Copyright WAC Gemert, Cis Slits, Freek vd Wijdeven ©2006-2019</p> -->
-            <!-- <p class="footer-links">
-                    <a href="/home" aria-label="Home" class="footernavhover">Home</a>
-                    ·
-                    <a href="/overons" aria-label="Competitie" class="footernavhover">Competitie</a>       
-                    ·
-                    <a href="/overzicht" aria-label="Overzicht " class="footernavhover">Beker</a>
-                    ·
-                    <a href="/profiel" aria-label="Profiel" class="footernavhover">Teams</a>
-                    ·
-                    <a href="/profiel" aria-label="Profiel" class="footernavhover">Organisatie</a>
-                    ·
-                    <a href="/profiel" aria-label="Profiel" class="footernavhover">Historie</a>
-                    ·
-                    <a href="/profiel" aria-label="Profiel" class="footernavhover">Sponsors</a>
-                </p> -->
         </div>
         <div class="footer-center">
             <div>
@@ -158,7 +146,7 @@
                         class="fab fa-instagram"></i></a>
             </div>
             <div class="footer-logoff profilepage">
-
+                <button class="btn btn-secondary" href="{{ url('/logout') }}"> logout </button>
             </div>
 
         </div>
