@@ -1,13 +1,14 @@
 @extends('layouts.layout')
 
-@section('content')
-       
-
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h1>Beheersysteem</h1>
-                </div>
+@section('content')  
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
             </div>
-        </div>
+        </nav>
 @endsection
