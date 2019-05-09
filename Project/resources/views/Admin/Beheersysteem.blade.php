@@ -1,8 +1,8 @@
 @extends('layouts.layout')
 
-
 @section('content')
-<!-- Navigatie -->
+
+<!--navigatie-->
 <nav class="navbar navbar-expand-lg cmsnavigatie">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,4 +34,6 @@
         </ul>
     </div>
 </nav>
+<!--end navigatie-->
+
 @endsection
