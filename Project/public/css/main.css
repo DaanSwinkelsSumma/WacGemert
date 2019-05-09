@@ -12,6 +12,11 @@
 .navigatie-tekst{
     color: white !important;
 }
+
+.custom-toggler.navbar-toggler {
+    border-color: rgb(255, 255, 255);
+}
+
 .active{
     background: rgba(83, 133, 214) !important;
 }
