@@ -15,7 +15,7 @@ Auth::routes();
 // Basic pages
 Route::get('/', 'PageController@index');
 Route::get('/home', 'PageController@index')->name('home');
-Route::get('/Competitie', ['middleware' => 'auth', 'uses' => 'PageController@Competitie']);
+Route::get('/Competitie', ['middleware' => 'auth', 'uses' => 'CompetitieContoller@Competitie']);
 Route::get('/Beker', ['middleware' => 'auth', 'uses' => 'PageController@Beker']);
 Route::get('/Teams', ['middleware' => 'auth', 'uses' => 'PageController@Teams']);
 Route::get('/Organisatie', ['middleware' => 'auth', 'uses' => 'PageController@Organisatie']);

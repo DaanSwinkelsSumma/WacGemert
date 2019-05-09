@@ -19,6 +19,7 @@ class AddDummyEvent extends Seeder
         	['title'=>'Demo Event-3', 'start_date'=>'2017-09-17', 'end_date'=>'2017-09-17'],
         ];
         foreach ($data as $key => $value) {
+            dd($data);
         	Wedstrijd::create($value);
         }
     }

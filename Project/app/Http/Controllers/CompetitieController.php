@@ -23,13 +23,18 @@ class CompetitieController extends Controller
                     // Add color and link on event
 	                [
 	                    'color' => '#f05050',
-	                    'url' => 'pass here url and any route',
+	                    'url' => '',
 	                ]
                 );
             }
         }
         $calendar = Calendar::addEvents($events);
-        // dd($calendar);
+        //dd($calendar);
         return view('Calender', compact('calendar'));
+    }
+
+    public function competitie()
+    {
+        return view('Competitie', compact('calendar'));
     }
 }
