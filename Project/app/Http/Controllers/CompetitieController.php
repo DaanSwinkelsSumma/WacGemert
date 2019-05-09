@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Calendar;
 use App\Wedstrijd;
+use DB;
 
 class CompetitieController extends Controller
 {
@@ -35,6 +36,9 @@ class CompetitieController extends Controller
 
     public function competitie()
     {
+        $teams = DB::table('teams')->get();
+        dd($teams);
+        
         return view('Competitie', compact('calendar'));
     }
 }
