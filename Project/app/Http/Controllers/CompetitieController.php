@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Calendar;
-use App\Wedstrijd;
 use DB;
+use App\Wedstrijd;
+use App\Team;
+
 
 class CompetitieController extends Controller
 {
@@ -23,8 +25,9 @@ class CompetitieController extends Controller
                     null,
                     // Add color and link on event
 	                [
+                        'editable' => 'true',
 	                    'color' => '#f05050',
-	                    'url' => '',
+	                    'url' => '/home',
 	                ]
                 );
             }
@@ -36,9 +39,23 @@ class CompetitieController extends Controller
 
     public function competitie()
     {
-        $teams = DB::table('teams')->get();
-        dd($teams);
+        // $teams = DB::table('teams')->get();
+        $TeamsThuis = Team::inRandomOrder('RAND()')->get();
+        // $TeamsUitnotshuffled = Team::inRandomOrder('RAND()')->get();
+
+        $TeamsUit = $TeamsThuis->reverse();
+        // dd($TeamsUit);
         
-        return view('Competitie', compact('calendar'));
+        return view('Competitie', compact('TeamsThuis', 'TeamsUit'));
     }
 }
+
+
+
+        // $wedstrijd = new Wedstrijd;
+        // $wedstrijd->TeamUit = $team1;
+        // $wedstrijd->TeamThuis = $team2;
+        // $wedstrijd->Hal = '';
+        // $wedstrijd->Tijd = '';
+        // $wedstrijd->WedstrijdDatum = '';
+        // $wedstrijd->save();
