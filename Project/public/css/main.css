@@ -32,9 +32,12 @@
 }
 
 .wedstrijd{
-    background-color: rgb(224, 242, 243) ;
-    border: rgb(182, 230, 231);
-    border: 1px;
-    border-radius: 25px;
+    background-color: rgb(224, 224, 224) ;
+    border: rgb(207, 207, 207);
+    border-style: solid;
+    border-radius: 15px;
     height: 60px;
+}
+.wedstrijdteam{
+    text-align: center;
 }
