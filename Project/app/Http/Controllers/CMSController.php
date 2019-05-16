@@ -3,17 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Wedstrijdstand;
+use Illuminate\Support\Facades\Input;
+use App\Wedstrijd;
+use DB;
 
-class Wedstrijdstanden extends Controller
+class CMSController extends Controller
 {
-    public function updateScores(){
-        // $wedstrijdID = Wedstrijdstand::getStanden('WedstrijdID');
-        // $TeamThuisScore = Wedstrijdstand::getStanden('TeamThuisScore');
-        // $teamUitScore = Wedstrijdstand::getStanden('TeamUitScore');
-        //array('id'=>$wedstrijdID,'thuis'=>$TeamThuisScore,'uit'=>$teamUitScore)
+    public function getScores(){
         $wedstrijden = DB::table('wedstrijden')->get();
 
-        return view('Standen', compact('wedstrijden'));
+        return view('Admin.Standen', compact('wedstrijden'));
+    }
+
+    public function updateScore(Request){
+
+        $wedstrijd->TeamThuisScore = Input::get('TeamThuisScore');
+        // $wedstrijd->save();
+        dd($wedstrijd);
+        return redirect('home');
     }
 }
+
