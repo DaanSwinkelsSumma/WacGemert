@@ -30,3 +30,11 @@
     padding: 0% !important;
     margin-bottom: 10px;
 }
+
+.wedstrijd{
+    background-color: rgb(224, 242, 243) ;
+    border: rgb(182, 230, 231);
+    border: 1px;
+    border-radius: 25px;
+    height: 60px;
+}
