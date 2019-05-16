@@ -48,22 +48,34 @@ class CompetitieController extends Controller
     public function newcomp()
     {
         $i = 0;
+        
         $TeamsThuis = Team::inRandomOrder('RAND()')->get()->pluck('TeamNaam');
         $TeamsThuisArray = $TeamsThuis->all();
-        $TeamsUitArray = array_reverse ($TeamsThuisArray);
+        $TeamsUitArray = $TeamsThuisArray;
+        $shiftloop = array_shift($TeamsUitArray);
+        array_push($TeamsUitArray, $shiftloop);
         
-        foreach ($TeamsThuis as $TeamThuis) {
-            $wedstrijden = new Wedstrijd();
-            
-            $wedstrijden->TeamThuis = $TeamsThuisArray[$i];
-            $wedstrijden->TeamUit = $TeamsUitArray[$i];
+        while ($TeamsUitArray[0] !== $TeamsThuisArray[0]) {
 
-            $wedstrijden->Hal = 1;
-            $wedstrijden->Tijd = '12:00';
-            $wedstrijden->WedstrijdDatum = '16/05/2019';
-            $wedstrijden->save();
-            $i++;
+
+           dump($TeamsUitArray);
+
+            foreach ($TeamsThuis as $TeamThuis) {
+                $wedstrijden = new Wedstrijd();
+                
+                $wedstrijden->TeamThuis = $TeamsThuisArray[$i];
+                $wedstrijden->TeamUit = $TeamsUitArray[$i];
+
+                $wedstrijden->Hal = 1;
+                $wedstrijden->Tijd = '12:00';
+                $wedstrijden->WedstrijdDatum = '16/05/2019';
+                $wedstrijden->save();
+                $i++;
+            }
+            $shift = array_shift($TeamsUitArray);
+            array_push($TeamsUitArray, $shift);
         }
+
 
         $wedstrijden = DB::table('wedstrijden')->get();
         // dd($wedstrijden);
