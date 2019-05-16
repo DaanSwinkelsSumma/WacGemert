@@ -4,36 +4,28 @@
        
 
         <div class="container">
+        <br>
             <div class="row">
                 <div class="col">
-                    <h1>Competitie</h1>
+                </div>
+                <div class="col">
+                    <h2>Competitie</h2>
+                </div>
+                <div class="col">
+                    <a href="/Competitie/new">
+                        <button class="btn">Nieuwe competitie</button>
+                    </a>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    @foreach ($TeamsThuis as $TeamThuis)
-                        <h6>{{ $TeamThuis->TeamNaam }}</h6>
-                    @endforeach
+            <br>
+            @foreach ($wedstrijden as $wedstrijd)
+            <a href="">
+                <div class="row wedstrijd">
+                    <div class="col"><h6>{{ $wedstrijd->TeamUit }}</h6></div>
+                    <div class="col"><h6>{{ $wedstrijd->TeamThuis }}</h6></div>
                 </div>
-                <div class="col">
-                    <h6>-</h6>
-                    <h6>-</h6>
-                    <h6>-</h6>
-                    <h6>-</h6>
-                    <h6>-</h6>
-                    <h6>-</h6>
-                    <h6>-</h6>
-                    <h6>-</h6>
-                    <h6>-</h6>
-                    <h6>-</h6>
-                    <h6>-</h6>
-                    <h6>-</h6>
-                </div>
-                <div class="col">
-                    @foreach ($TeamsUit as $TeamUit)
-                        <h6>{{ $TeamUit->TeamNaam }}</h6>
-                    @endforeach
-                </div>
-            </div>
+            </a>
+            <br>
+            @endforeach
         </div>
 @endsection

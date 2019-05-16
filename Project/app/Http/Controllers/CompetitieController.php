@@ -39,23 +39,39 @@ class CompetitieController extends Controller
 
     public function competitie()
     {
-        // $teams = DB::table('teams')->get();
-        $TeamsThuis = Team::inRandomOrder('RAND()')->get();
-        // $TeamsUitnotshuffled = Team::inRandomOrder('RAND()')->get();
+        $wedstrijden = DB::table('wedstrijden')->get();
+        // dd($wedstrijden);
 
-        $TeamsUit = $TeamsThuis->reverse();
-        // dd($TeamsUit);
+        return view('Competitie', compact('wedstrijden'));
+    }
+
+    public function newcomp()
+    {
+        $i = 0;
+        $TeamsThuis = Team::inRandomOrder('RAND()')->get()->pluck('TeamNaam');
+        $TeamsThuisArray = $TeamsThuis->all();
+        $TeamsUitArray = array_reverse ($TeamsThuisArray);
         
-        return view('Competitie', compact('TeamsThuis', 'TeamsUit'));
+        foreach ($TeamsThuis as $TeamThuis) {
+            $wedstrijden = new Wedstrijd();
+            
+            $wedstrijden->TeamThuis = $TeamsThuisArray[$i];
+            $wedstrijden->TeamUit = $TeamsUitArray[$i];
+
+            $wedstrijden->Hal = 1;
+            $wedstrijden->Tijd = '12:00';
+            $wedstrijden->WedstrijdDatum = '16/05/2019';
+            $wedstrijden->save();
+            $i++;
+        }
+
+        $wedstrijden = DB::table('wedstrijden')->get();
+        // dd($wedstrijden);
+
+        return view('Competitie', compact('wedstrijden'));
     }
 }
 
 
 
-        // $wedstrijd = new Wedstrijd;
-        // $wedstrijd->TeamUit = $team1;
-        // $wedstrijd->TeamThuis = $team2;
-        // $wedstrijd->Hal = '';
-        // $wedstrijd->Tijd = '';
-        // $wedstrijd->WedstrijdDatum = '';
-        // $wedstrijd->save();
+

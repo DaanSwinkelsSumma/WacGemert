@@ -31,4 +31,7 @@ Route::get('/Logout', '\App\Http\Controllers\UserController@Logout');
 //Calendar
 Route::get('events', 'CompetitieController@index');
 
+//new competitie
+Route::get('/Competitie/new', ['middleware' => 'auth', 'uses' => 'CompetitieController@newcomp']);
+
 
