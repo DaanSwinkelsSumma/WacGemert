@@ -62,9 +62,6 @@ class PageController extends Controller
         return view('Admin/Beheersysteem');
     }
 
-    public function Standen()
-    {
-        return view('Admin/Standen');
-    }
+    
 
 }

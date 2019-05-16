@@ -44,13 +44,28 @@
         </div>
     </div>
     <div class="row">
+            <div class="col">
+                <select>
+                    @foreach($wedstrijden as $wedstrijd)
+                    <option value="{{ $wedstrijd->WedstrijdID }}" >{{ $wedstrijd->WedstrijdID }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
+    <div class="row">
         <div class="col">
             <h6>Team 1 score:</h6>
-            <input id="wedstrijdstand1">
+            <input id="TeamThuisScore">
         </div>
         <div class="col">
             <h6>Team 2 score:</h6>
-            <input id="wedstrijdstand2">
+            <input id="TeamUitScore">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button onclick="update()">Update</button>
+        
         </div>
     </div>
 </div>
