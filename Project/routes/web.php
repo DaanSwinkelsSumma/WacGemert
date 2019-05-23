@@ -23,7 +23,7 @@ Route::get('/Historie', ['middleware' => 'auth', 'uses' => 'PageController@Histo
 Route::get('/Profiel', ['middleware' => 'auth', 'uses' => 'PageController@Profiel']);
 Route::get('/CMS', ['middleware' => 'auth', 'uses' => 'PageController@CMS']);
 Route::get('/Standen', ['middleware' => 'auth', 'uses' => 'CMSController@getScores']);
-Route::get('/wedstrijd/scoreupdate/{wedstrijd}', ['middleware' => 'auth', 'uses' => 'CMSController@updateScore']);
+Route::post('/wedstrijd/scoreupdate/{wedstrijd}', ['middleware' => 'auth', 'uses' => 'CMSController@updateScore']);
 
 
 //User

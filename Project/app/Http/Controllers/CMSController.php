@@ -15,12 +15,16 @@ class CMSController extends Controller
         return view('Admin.Standen', compact('wedstrijden'));
     }
 
-    public function updateScore(Request){
-
+    public function updateScore(Wedstrijd $wedstrijd){
+        // dd($request->input('TeamThuisScore'));
+        // $wedstrijd = Wedstrijd::find($WedstrijdID);
+        
         $wedstrijd->TeamThuisScore = Input::get('TeamThuisScore');
-        // $wedstrijd->save();
-        dd($wedstrijd);
-        return redirect('home');
+        $wedstrijd->TeamUitScore = Input::get('TeamUitScore');
+        // dd($wedstrijd);
+        $wedstrijd->save();
+
+        return redirect('Standen');
     }
 }
 
