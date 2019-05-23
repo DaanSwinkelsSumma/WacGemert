@@ -15,6 +15,12 @@ class CMSController extends Controller
         return view('Admin.Standen', compact('wedstrijden'));
     }
 
+    public function competitie(){
+        $wedstrijden = DB::table('wedstrijden')->get();
+
+        return view('Standen', compact('wedstrijden'));
+    }
+
     public function updateScore(Wedstrijd $wedstrijd){
         // dd($request->input('TeamThuisScore'));
         // $wedstrijd = Wedstrijd::find($WedstrijdID);

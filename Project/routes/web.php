@@ -42,5 +42,3 @@ Route::get('/Competitie/new', ['middleware' => 'auth', 'uses' => 'CompetitieCont
 Route::get('/competitie/wedstrijd/{wedstrijd}', ['middleware' => 'auth', 'uses' => 'CompetitieController@wedstrijddetail']);
 
 
-
-
