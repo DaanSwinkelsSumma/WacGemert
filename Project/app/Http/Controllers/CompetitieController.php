@@ -55,35 +55,41 @@ class CompetitieController extends Controller
 
     public function newcomp()
     {
-    $teams[] = Team::pluck('TeamNaam')->toArray();
-    // dd($teams);
+        $i = 0; 
+        
+        $TeamsThuis = Team::pluck('TeamNaam');
+        $TeamsThuisArray = $TeamsThuis->all();
+
+        $TeamsUitArray = $TeamsThuisArray;
+        $shiftloop = array_shift($TeamsUitArray);
+        array_push($TeamsUitArray, $shiftloop);
 
 
-    if (count($teams)%2 != 0){
-            array_push($teams,"");
-        }
-        $away = array_splice($teams,(count($teams[0])/2));
-        $home = $teams;
-        dd($teams);
-        for ($i=0; $i < count($home)+count($away)-1; $i++)
-        {
-            shuffle($home);
-            shuffle($away);
-            for ($j=0; $j<count($home); $j++)
-            {
-                $round[$i][$j]["Home"]=$home[$j];
-                $round[$i][$j]["Away"]=$away[$j];
+        while ($TeamsUitArray[0] !== $TeamsThuisArray[0]) {
+            // dump($TeamsUitArray);   
+
+            foreach ($TeamsUitArray as $TeamUitArray) {
+
+                $wedstrijden = new Wedstrijd();
+                $wedstrijden->TeamThuis = $TeamsThuisArray[$i];
+                $wedstrijden->TeamUit = $TeamsUitArray[$i];
+                $wedstrijden->Hal = 1;
+                $wedstrijden->Tijd = '12:00';
+                $wedstrijden->WedstrijdDatum = '16/05/2019';
+                $wedstrijden->Klasse = 'Hoofdklasse';
+                $wedstrijden->save();
+                $i++;
+                  
             }
-            if(count($home)+count($away)-1 > 2)
-            {
-                $s = array_splice( $home, 1, 1 );
-                $slice = array_shift( $s  );
-                array_unshift($away,$slice );
-                array_push( $home, array_pop($away ) );
-            }
+
+            $shift = array_shift($TeamsUitArray);
+            array_push($TeamsUitArray, $shift);
+            $i = 0;
         }
-        dd($round);
-        return $round;
+        
+        $wedstrijden = DB::table('wedstrijden')->get();
+        // dd($wedstrijden);
+        return view('Competitie', compact('wedstrijden'));
 
     }
 }
