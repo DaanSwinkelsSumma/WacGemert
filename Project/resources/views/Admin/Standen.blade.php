@@ -55,17 +55,22 @@
     <div class="row">
         <div class="col">
             <h6>Team 1 score:</h6>
-            <input id="TeamThuisScore">
+            @foreach($wedstrijden as $team1)
+            <input name="TeamThuisScore" id="TeamThuisScore" value="{{ $team1->TeamThuisScore }}">
+            @endforeach
         </div>
         <div class="col">
             <h6>Team 2 score:</h6>
-            <input id="TeamUitScore">
+            @foreach($wedstrijden as $team2)
+            <input name="TeamUitScore" id="TeamUitScore" value="{{ $team2->TeamUitScore }}">
+            @endforeach
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <button onclick="update()">Update</button>
-        
+        <a href="/wedstrijd/scoreupdate/{{ $team1->TeamThuisScore }}">
+                <button >Update</button>
+            </a>
         </div>
     </div>
 </div>
