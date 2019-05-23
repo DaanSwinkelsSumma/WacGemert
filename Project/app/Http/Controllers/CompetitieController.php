@@ -45,42 +45,46 @@ class CompetitieController extends Controller
         return view('Competitie', compact('wedstrijden'));
     }
 
+    public function wedstrijddetail(Wedstrijd $wedstrijd)
+    {
+        // dd($wedstrijd);
+        // $wedstrijd = DB::table('wedstrijden')->get();
+
+        return view('wedstrijddetail', compact('wedstrijd'));
+    }
+
     public function newcomp()
     {
-        $i = 0;
-        
-        $TeamsThuis = Team::inRandomOrder('RAND()')->get()->pluck('TeamNaam');
-        $TeamsThuisArray = $TeamsThuis->all();
-        $TeamsUitArray = $TeamsThuisArray;
-        $shiftloop = array_shift($TeamsUitArray);
-        array_push($TeamsUitArray, $shiftloop);
-        
-        while ($TeamsUitArray[0] !== $TeamsThuisArray[0]) {
+    $teams[] = Team::pluck('TeamNaam')->toArray();
+    // dd($teams);
 
 
-           dump($TeamsUitArray);
-
-            foreach ($TeamsThuis as $TeamThuis) {
-                $wedstrijden = new Wedstrijd();
-                
-                $wedstrijden->TeamThuis = $TeamsThuisArray[$i];
-                $wedstrijden->TeamUit = $TeamsUitArray[$i];
-
-                $wedstrijden->Hal = 1;
-                $wedstrijden->Tijd = '12:00';
-                $wedstrijden->WedstrijdDatum = '16/05/2019';
-                $wedstrijden->save();
-                $i++;
-            }
-            $shift = array_shift($TeamsUitArray);
-            array_push($TeamsUitArray, $shift);
+    if (count($teams)%2 != 0){
+            array_push($teams,"");
         }
+        $away = array_splice($teams,(count($teams[0])/2));
+        $home = $teams;
+        dd($teams);
+        for ($i=0; $i < count($home)+count($away)-1; $i++)
+        {
+            shuffle($home);
+            shuffle($away);
+            for ($j=0; $j<count($home); $j++)
+            {
+                $round[$i][$j]["Home"]=$home[$j];
+                $round[$i][$j]["Away"]=$away[$j];
+            }
+            if(count($home)+count($away)-1 > 2)
+            {
+                $s = array_splice( $home, 1, 1 );
+                $slice = array_shift( $s  );
+                array_unshift($away,$slice );
+                array_push( $home, array_pop($away ) );
+            }
+        }
+        dd($round);
+        return $round;
 
-
-        $wedstrijden = DB::table('wedstrijden')->get();
-        // dd($wedstrijden);
-
-        return view('Competitie', compact('wedstrijden'));
     }
 }
 

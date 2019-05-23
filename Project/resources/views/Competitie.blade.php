@@ -18,12 +18,23 @@
                 </div>
             </div>
             <br>
+            <div class="row">
+                <div class="col wedstrijdteam">
+                    <h2>Thuis</h2>
+                </div>
+                <div class="col wedstrijdteam">
+                </div>
+                <div class="col wedstrijdteam">
+                    <h2>Uit</h2>
+                </div>
+            </div>
+            <br>
             @foreach ($wedstrijden as $wedstrijd)
-                <a href="">
+                <a href="/competitie/wedstrijd/{{ $wedstrijd->WedstrijdID }}">
                     <div class="row wedstrijd wedstrijdteam">
-                        <div class="col"><h6>{{ $wedstrijd->TeamUit }}</h6></div>
-                        <div class="col"><h6>VS</h6></div>
                         <div class="col"><h6>{{ $wedstrijd->TeamThuis }}</h6></div>
+                        <div class="col"><h6>VS</h6></div>
+                        <div class="col"><h6>{{ $wedstrijd->TeamUit }}</h6></div>
                     </div>
                 </a>
             <br>

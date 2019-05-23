@@ -12,6 +12,8 @@
 */
 
 Auth::routes();
+
+
 // Basic pages
 Route::get('/', 'PageController@index');
 Route::get('/home', 'PageController@index')->name('home');
@@ -35,5 +37,10 @@ Route::get('events', 'CompetitieController@index');
 
 //new competitie
 Route::get('/Competitie/new', ['middleware' => 'auth', 'uses' => 'CompetitieController@newcomp']);
+
+//wedstrijd detail
+Route::get('/competitie/wedstrijd/{wedstrijd}', ['middleware' => 'auth', 'uses' => 'CompetitieController@wedstrijddetail']);
+
+
 
 
