@@ -52,5 +52,3 @@ Route::get('/Teams/aanpassen/{team}', ['middleware' => 'auth', 'uses' => 'TeamCo
 
 
 
-
-

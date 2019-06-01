@@ -29,12 +29,12 @@
         <br>
         <div class="row">
             <div class="col wedstrijdteam">
-                <h3>{{ $wedstrijd->Hal}}</h3>
+                <h3>{{ $wedstrijd->TeamThuisScore}}</h3>
             </div>
             <div class="col wedstrijdteam">
             </div>
             <div class="col wedstrijdteam">
-                <h3>{{ $wedstrijd->WedstrijdDatum}}</h3>
+                <h3>{{ $wedstrijd->TeamUitScore}}</h3>
             </div>
         </div>
     </div>
