@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use App\Wedstrijd;
+use App\Team;
 
 class PageController extends Controller
 {
@@ -34,10 +37,7 @@ class PageController extends Controller
     }
 
     
-    public function Teams()
-    {
-        return view('Teams');
-    }
+    
 
     
     public function Organisatie()

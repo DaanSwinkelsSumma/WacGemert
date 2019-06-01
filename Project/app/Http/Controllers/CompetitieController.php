@@ -57,7 +57,7 @@ class CompetitieController extends Controller
     {
         $i = 0; 
         
-        $TeamsThuis = Team::pluck('TeamNaam');
+        $TeamsThuis = Team::pluck('TeamNaam')->where('Klasse', '=', 'Hoofdklasse');
         $TeamsThuisArray = $TeamsThuis->all();
 
         $TeamsUitArray = $TeamsThuisArray;

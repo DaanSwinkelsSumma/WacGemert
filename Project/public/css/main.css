@@ -41,3 +41,16 @@
 .wedstrijdteam{
     text-align: center;
 }
+
+.teamdetail{
+    background-color: rgb(224, 224, 224) ;
+    border: rgb(207, 207, 207);
+    border-style: solid;
+    border-radius: 15px;
+
+}
+
+.teamimg{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

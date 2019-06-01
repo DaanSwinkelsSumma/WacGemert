@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use DB;
+use App\Wedstrijd;
+use App\Team;
+
+class TeamController extends Controller
+{
+    public function Teams(Request $request)
+    {
+        $klasses = DB::table('Teams')->select('Klasse')->distinct()->get();
+        $teams = Team::all()->where('Klasse', '=', 'Hoofdklasse');
+
+        return view('Teams', compact('klasses', 'teams'));
+    }
+
+    public function Klasses(Request $request)
+    {
+        $klasses = DB::table('Teams')->select('Klasse')->distinct()->get();
+        $gekozeklasse = $request->input('klasse');
+        $teams = Team::all()->where('Klasse', '=', $gekozeklasse);
+        // dump('teams');
+        return view('Teams', compact('klasses', 'teams'));
+    }
+
+    public function TeamDetail(Team $team)
+    {
+        $team = $team;
+        return view('Teamdetail', compact('team'));
+    }
+
+    public function TeamAanpassen(Team $team)
+    {
+
+        return view('Teamaanpassen', compact('team'));
+    }
+}
