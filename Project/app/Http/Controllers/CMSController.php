@@ -12,13 +12,23 @@ class CMSController extends Controller
     public function getScores(){
         $wedstrijden = DB::table('wedstrijden')->get();
 
-        return view('Admin.Standen', compact('wedstrijden'));
+        return view('Standen', compact('wedstrijden'));
+    }
+
+    public function  wedstrijdDetail(Wedstrijd $wedstrijd){
+        //dd($wedstrijd);
+
+        return view('StandenDetail', compact('wedstrijd'));
     }
 
     public function competitie(){
         $wedstrijden = DB::table('wedstrijden')->get();
 
         return view('Standen', compact('wedstrijden'));
+    }
+
+    public function scoreAanpassen(Wedstrijd $wedstrijd){
+        return view('StandenAanpassen', compact('wedstrijd'));
     }
 
     public function updateScore(Wedstrijd $wedstrijd){

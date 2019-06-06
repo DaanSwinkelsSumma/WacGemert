@@ -23,7 +23,6 @@ Route::get('/Teams', ['middleware' => 'auth', 'uses' => 'TeamController@Teams'])
 Route::get('/Organisatie', ['middleware' => 'auth', 'uses' => 'PageController@Organisatie']);
 Route::get('/Historie', ['middleware' => 'auth', 'uses' => 'PageController@Historie']);
 Route::get('/Profiel', ['middleware' => 'auth', 'uses' => 'PageController@Profiel']);
-Route::get('/CMS', ['middleware' => 'auth', 'uses' => 'PageController@CMS']);
 Route::get('/Standen', ['middleware' => 'auth', 'uses' => 'CMSController@getScores']);
 Route::post('/wedstrijd/scoreupdate/{wedstrijd}', ['middleware' => 'auth', 'uses' => 'CMSController@updateScore']);
 
@@ -53,3 +52,14 @@ Route::get('/Teams/aanpassen/{team}', ['middleware' => 'auth', 'uses' => 'TeamCo
 //Team Update
 Route::patch('/Team/update/{team}', ['middleware' => 'auth', 'uses' => 'TeamController@update']);
 
+//Standen tabel
+Route::get('/Standen/wedstrijd', ['middleware' => 'auth', 'uses' => 'CMSController@getScores']);
+
+//Standen detail
+Route::get('/Standen/{wedstrijd}', ['middleware' => 'auth', 'uses' => 'CMSController@wedstrijdDetail']);
+
+//Standen aanpassen
+Route::get('/Standen/aanpassen/{wedstrijd}', ['middleware' => 'auth', 'uses' => 'CMSController@scoreAanpassen']);
+
+//Standen Update
+Route::patch('/Standen/update/{wedstrijd}', ['middleware' => 'auth', 'uses' => 'CMSController@updateScore']);

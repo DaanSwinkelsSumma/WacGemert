@@ -36,7 +36,6 @@ class TeamController extends Controller
 
     public function TeamAanpassen(Team $team)
     {
-
         return view('Teamaanpassen', compact('team'));
     }
 

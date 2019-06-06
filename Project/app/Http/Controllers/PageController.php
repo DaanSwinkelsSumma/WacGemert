@@ -56,12 +56,4 @@ class PageController extends Controller
         return view('Profiel');
     }
 
-    
-    public function CMS()
-    {
-        return view('Admin/Beheersysteem');
-    }
-
-    
-
 }

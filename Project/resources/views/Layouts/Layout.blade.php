@@ -67,17 +67,10 @@
                 <li class="nav-item navblock">
                     <a class="nav-link navigatie-tekst" href="/Sponsors">Sponsors</a>
                 </li>
-                @if (Route::has('login'))
-                    <div class="top-right links">
-                        @auth
-                        <li class="nav-item navblock">
-                            <a class="nav-link navigatie-tekst" href="/CMS">CMS</a>
-                        </li>
-                        @else
-
-                        @endauth
-                    </div>
-                @endif
+                <li class="nav-item navblock">
+                    <a class="nav-link navigatie-tekst" href="/Standen">Standen</a>
+                </li>
+                
                
 
             </ul>
