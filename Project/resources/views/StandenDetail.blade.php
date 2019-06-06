@@ -27,6 +27,18 @@
         </div>
         <br>
         <div class="row" style="text-align:center">
+                <div class="col">
+                    <h2>{{ $wedstrijd->WedstrijdDatum }}</h2>
+                </div>
+                <div class="col">
+                        <h2>{{ $wedstrijd->Hal }}</h2>
+                    </div>
+                    <div class="col">
+                            <h2>{{ $wedstrijd->Tijd }}</h2>
+                        </div>
+            </div>
+            <br>
+        <div class="row" style="text-align:center">
             <div class="col">
             <a href="/Standen/aanpassen/{{$wedstrijd->WedstrijdID}}" class="btn btn-primary">Aanpassen</a>
             </div>

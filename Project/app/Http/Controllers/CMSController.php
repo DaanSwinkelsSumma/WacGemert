@@ -27,16 +27,18 @@ class CMSController extends Controller
         return view('Standen', compact('wedstrijden'));
     }
 
-    public function scoreAanpassen(Wedstrijd $wedstrijd){
+    public function wedstrijdAanpassen(Wedstrijd $wedstrijd){
         return view('StandenAanpassen', compact('wedstrijd'));
     }
 
-    public function updateScore(Wedstrijd $wedstrijd){
+    public function updateWedstrijd(Wedstrijd $wedstrijd){
         // dd($request->input('TeamThuisScore'));
         // $wedstrijd = Wedstrijd::find($WedstrijdID);
         
         $wedstrijd->TeamThuisScore = Input::get('TeamThuisScore');
         $wedstrijd->TeamUitScore = Input::get('TeamUitScore');
+        $wedstrijd->TeamThuis = Input::get('TeamThuis');
+        $wedstrijd->TeamUit = Input::get('TeamUit');
         // dd($wedstrijd);
         $wedstrijd->save();
 

@@ -3,10 +3,11 @@
 
 @section('content')
 
+<br>
 <div class="container-fluid">
     <div class="row" style="text-align:center">
         <div class="col">
-            <h1 class="h1tekst">Pas de score aan</h1>
+            <h1 class="h1tekst">Pas de wedstrijd aan</h1>
         </div>
     </div>
 
