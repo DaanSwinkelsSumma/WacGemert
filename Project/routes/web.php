@@ -24,6 +24,7 @@ Route::get('/Organisatie', ['middleware' => 'auth', 'uses' => 'PageController@Or
 Route::get('/Historie', ['middleware' => 'auth', 'uses' => 'PageController@Historie']);
 Route::get('/Profiel', ['middleware' => 'auth', 'uses' => 'PageController@Profiel']);
 Route::get('/CMS', ['middleware' => 'auth', 'uses' => 'PageController@CMS']);
+Route::get('/Sponsors', ['middleware' => 'auth', 'uses' => 'PageController@Sponsors']);
 Route::get('/Standen', ['middleware' => 'auth', 'uses' => 'CMSController@getScores']);
 Route::post('/wedstrijd/scoreupdate/{wedstrijd}', ['middleware' => 'auth', 'uses' => 'CMSController@updateScore']);
 
@@ -43,6 +44,9 @@ Route::get('/competitie/wedstrijd/{wedstrijd}', ['middleware' => 'auth', 'uses' 
 
 //Teams per klasse
 Route::post('/Teams/klasse', ['middleware' => 'auth', 'uses' => 'TeamController@Klasses']);
+
+//Wedstijd handmatig toevoegen
+Route::get('/Wedstrijd/newpage', ['middleware' => 'auth', 'uses' => 'CompetitieController@wedstijdtoevoegen']);
 
 //Teams detail
 Route::get('/Teams/{team}', ['middleware' => 'auth', 'uses' => 'TeamController@TeamDetail']);

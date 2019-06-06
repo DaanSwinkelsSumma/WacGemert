@@ -36,7 +36,11 @@ class PageController extends Controller
         return view('Beker');
     }
 
-    
+    public function Sponsors()
+    {
+        return view('Sponsors');
+    }
+
     
 
     
