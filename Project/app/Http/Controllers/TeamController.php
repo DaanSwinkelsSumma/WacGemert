@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use DB;
 use App\Wedstrijd;
 use App\Team;
+use Illuminate\Support\Facades\Input;
+
 
 class TeamController extends Controller
 {
@@ -36,5 +38,13 @@ class TeamController extends Controller
     {
 
         return view('Teamaanpassen', compact('team'));
+    }
+
+    public function update(Team $team)
+    {
+        $team->TeamNaam = Input::get('TeamNaam');
+        $team->Klasse = Input::get('Klasse');
+        $team->save();
+        return redirect('home');
     }
 }

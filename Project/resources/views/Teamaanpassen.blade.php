@@ -9,13 +9,14 @@
             </div>
 
             <div class="col teamimg">
-                <form action="" method="post">
+                <form action="/Team/update/{{ $team->TeamID }}" method="post">
+                    @method('PATCH')
                     {{ csrf_field() }}
-                    <input type="text" value="{{ $team->TeamNaam}}" class="form-control">
+                    <input type="text" value="{{ $team->TeamNaam }}" class="form-control" name="TeamNaam">
                     <br>
-                    <input type="text" value="{{ $team->TeamID}}" class="form-control">
+                    <label value="" class="form-control">{{ $team->TeamID }}</label>
                     <br>
-                    <input type="text" value="{{ $team->Klasse}}" class="form-control">
+                    <input type="text" value="{{ $team->Klasse }}" class="form-control" name="Klasse">
                     <br>
                     <input type="submit" class="btn btn-primary" value="Aanpassen">
                 </form>

@@ -47,8 +47,9 @@ Route::post('/Teams/klasse', ['middleware' => 'auth', 'uses' => 'TeamController@
 //Teams detail
 Route::get('/Teams/{team}', ['middleware' => 'auth', 'uses' => 'TeamController@TeamDetail']);
 
-//Team aanpassen
+//Team nav aanpassen
 Route::get('/Teams/aanpassen/{team}', ['middleware' => 'auth', 'uses' => 'TeamController@TeamAanpassen']);
 
-
+//Team Update
+Route::patch('/Team/update/{team}', ['middleware' => 'auth', 'uses' => 'TeamController@update']);
 
