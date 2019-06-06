@@ -43,6 +43,9 @@ Route::get('/competitie/wedstrijd/{wedstrijd}', ['middleware' => 'auth', 'uses' 
 //Teams per klasse
 Route::post('/Teams/klasse', ['middleware' => 'auth', 'uses' => 'TeamController@Klasses']);
 
+//Wedstijd handmatig toevoegen
+Route::get('/Wedstrijd/newpage', ['middleware' => 'auth', 'uses' => 'CompetitieController@wedstijdtoevoegen']);
+
 //Teams detail
 Route::get('/Teams/{team}', ['middleware' => 'auth', 'uses' => 'TeamController@TeamDetail']);
 

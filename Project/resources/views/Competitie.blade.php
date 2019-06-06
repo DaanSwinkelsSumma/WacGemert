@@ -6,7 +6,10 @@
         <div class="container">
         <br>
             <div class="row">
-                <div class="col">
+                <div class="col wedstrijdteam">
+                    <a href="/Wedstrijd/newpage">
+                        <button class="btn">Wedstrijd aanmaken</button>
+                    </a>
                 </div>
                 <div class="col wedstrijdteam">
                     <h2>Competitie</h2>

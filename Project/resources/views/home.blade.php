@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h1>Welkom</h1>
+                    <h1>Welkom bij WAC Gemert</h1>
                 </div>
             </div>
         </div>

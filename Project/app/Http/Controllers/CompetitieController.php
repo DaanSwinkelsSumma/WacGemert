@@ -7,7 +7,7 @@ use Calendar;
 use DB;
 use App\Wedstrijd;
 use App\Team;
-
+use Illuminate\Support\Facades\Input;
 
 class CompetitieController extends Controller
 {
@@ -40,15 +40,13 @@ class CompetitieController extends Controller
     public function competitie()
     {
         $wedstrijden = DB::table('wedstrijden')->get();
-        // dd($wedstrijden);
+        $klasses = DB::table('Teams')->select('Klasse')->distinct()->get();
 
-        return view('Competitie', compact('wedstrijden'));
+        return view('Competitie', compact('wedstrijden', 'klasses'));
     }
 
     public function wedstrijddetail(Wedstrijd $wedstrijd)
     {
-        // dd($wedstrijd);
-        // $wedstrijd = DB::table('wedstrijden')->get();
 
         return view('wedstrijddetail', compact('wedstrijd'));
     }
@@ -91,6 +89,14 @@ class CompetitieController extends Controller
         // dd($wedstrijden);
         return view('Competitie', compact('wedstrijden'));
 
+    }
+    
+    public function wedstijdtoevoegen()
+    {
+        $klasse = Input::get('klasse');
+        $teams = DB::table('teams')->select('TeamNaam')->where('Klasse', '=', $klasse)->get();
+
+        return view('NieuweWedstrijd', compact('teams'));
     }
 }
 
