@@ -21,6 +21,7 @@ Route::get('/Competitie', ['middleware' => 'auth', 'uses' => 'CompetitieControll
 Route::get('/Beker', ['middleware' => 'auth', 'uses' => 'PageController@Beker']);
 Route::get('/Teams', ['middleware' => 'auth', 'uses' => 'TeamController@Teams']);
 Route::get('/Organisatie', ['middleware' => 'auth', 'uses' => 'PageController@Organisatie']);
+Route::get('/Sponsors', ['middleware' => 'auth', 'uses' => 'PageController@Sponsors']);
 Route::get('/Historie', ['middleware' => 'auth', 'uses' => 'PageController@Historie']);
 Route::get('/Profiel', ['middleware' => 'auth', 'uses' => 'PageController@Profiel']);
 Route::get('/Standen', ['middleware' => 'auth', 'uses' => 'CMSController@getScores']);
@@ -66,3 +67,12 @@ Route::get('/Standen/aanpassen/{wedstrijd}', ['middleware' => 'auth', 'uses' => 
 
 //Standen Update
 Route::patch('/Standen/update/{wedstrijd}', ['middleware' => 'auth', 'uses' => 'CMSController@updateWedstrijd']);
+
+//Nieuwe wedstrijd aanmaken
+Route::post('/wedstrijd/store/new', ['middleware' => 'auth', 'uses' => 'CompetitieController@newwedstrijd']);
+
+//nav naar nieuw team maken
+Route::get('/Nieuwteam', ['middleware' => 'auth', 'uses' => 'TeamController@newteampage']);
+
+//store new team in database
+Route::post('/Team/new', ['middleware' => 'auth', 'uses' => 'TeamController@storeteam']);

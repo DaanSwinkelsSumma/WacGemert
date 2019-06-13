@@ -46,4 +46,22 @@ class TeamController extends Controller
         $team->save();
         return redirect('home');
     }
+
+    public function newteampage()
+    {
+        $klasses = DB::table('Teams')->select('Klasse')->distinct()->get();
+        return view('Nieuwteam', compact('klasses'));
+    }
+
+    public function storeteam()
+    {
+        $team = new Team();
+
+        $team->TeamNaam = Input::get('teamnaam');
+        $team->Klasse = Input::get('klasse');
+
+        $team->save();
+        
+        return redirect('home');
+    }
 }

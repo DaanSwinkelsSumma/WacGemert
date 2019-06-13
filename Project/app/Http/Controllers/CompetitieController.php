@@ -93,10 +93,26 @@ class CompetitieController extends Controller
     
     public function wedstijdtoevoegen()
     {
-        $klasse = Input::get('klasse');
-        $teams = DB::table('teams')->select('TeamNaam')->where('Klasse', '=', $klasse)->get();
-
+        $teams = DB::table('teams')->select('TeamNaam')->get();
+        // dump($teams);
         return view('NieuweWedstrijd', compact('teams'));
+    }
+
+    
+    public function newwedstrijd()
+    {
+        $wedstrijd = new Wedstrijd();
+
+        $wedstrijd->TeamUit = Input::get('teamuit');
+        $wedstrijd->TeamThuis = Input::get('teamthuis');
+        $wedstrijd->Hal = Input::get('hal');
+        $wedstrijd->Tijd = Input::get('tijd');
+        $wedstrijd->WedstrijdDatum = Input::get('datum');
+        $wedstrijd->Klasse = Input::get('klasse');
+
+        $wedstrijd->save();
+
+        return redirect('home');
     }
 }
 

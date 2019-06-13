@@ -18,7 +18,10 @@
                     <input type="submit" name="" id="" class="btn-primary form-control" value="Zoeken" >
                 </form>
             </div>
-            <div class="col">
+            <div class="col" style="text-align: right">
+                <a href="/Nieuwteam">
+                    <button style="margin-top:30px" class="btn btn-primary">Nieuw team</button>
+                </a>
             </div>
         </div>
         <div class="row" style="text-align:center">

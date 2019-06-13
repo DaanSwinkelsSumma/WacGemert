@@ -5,7 +5,7 @@
         <br>
         <div class="row teamdetail">
             <div class="col teamimg">
-                <img src="/storage/{{ $team->TeamID }}.jpg" height="400" width="650" />
+                <img src="/storage/{{ $team->TeamID }}.jpg" height="400" width="650">
             </div>
 
             <div class="col teamimg">
