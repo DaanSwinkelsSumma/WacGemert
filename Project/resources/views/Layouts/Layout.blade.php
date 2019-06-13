@@ -48,16 +48,13 @@
                     <a class="nav-link navigatie-tekst" href="/Competitie">Competitie</a>
                 </li>
                 <li class="nav-item navblock">
-                    <a class="nav-link navigatie-tekst" href="/Beker">Beker</a>
-                </li>
-                <li class="nav-item navblock">
                     <a class="nav-link navigatie-tekst" href="/Teams">Teams</a>
                 </li>
                 <li class="nav-item navblock">
                     <a class="nav-link navigatie-tekst" href="/Organisatie">Organisatie</a>
                 </li>
                 <li class="nav-item navblock">
-                    <a class="nav-link navigatie-tekst" href="/Historie">Historie</a>
+                    <a class="nav-link navigatie-tekst" href="/Historie">Verslagen</a>
                 </li>
                 <li class="nav-item navblock">
                     <a class="nav-link navigatie-tekst" href="/Sponsors">Sponsors</a>

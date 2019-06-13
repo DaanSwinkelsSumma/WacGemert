@@ -18,7 +18,6 @@ Auth::routes();
 Route::get('/', 'PageController@index');
 Route::get('/home', 'PageController@index')->name('home');
 Route::get('/Competitie', ['middleware' => 'auth', 'uses' => 'CompetitieController@Competitie']);
-Route::get('/Beker', ['middleware' => 'auth', 'uses' => 'PageController@Beker']);
 Route::get('/Teams', ['middleware' => 'auth', 'uses' => 'TeamController@Teams']);
 Route::get('/Organisatie', ['middleware' => 'auth', 'uses' => 'PageController@Organisatie']);
 Route::get('/Sponsors', ['middleware' => 'auth', 'uses' => 'PageController@Sponsors']);
