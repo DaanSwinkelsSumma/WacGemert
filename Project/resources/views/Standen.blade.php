@@ -29,8 +29,8 @@
         @foreach($wedstrijden as $wedstrijd)
         <a href="/Standen/{{$wedstrijd->WedstrijdID}}">
             <div class="row wedstrijd wedstrijdteam">
-                <div class="col">{{ $wedstrijd->TeamThuis }}</div>
-                <div class="col">{{ $wedstrijd->TeamUit }}</div>
+            <div class="col">{{ $wedstrijd->TeamThuis }} <br> Score:  {{ $wedstrijd->TeamThuisScore }}</div>
+            <div class="col">{{ $wedstrijd->TeamUit }} <br> Score:  {{ $wedstrijd->TeamUitScore }}</div>
             </div>
         </a>
         <br>

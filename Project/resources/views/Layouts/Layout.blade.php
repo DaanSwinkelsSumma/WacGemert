@@ -29,12 +29,7 @@
     <noscript>
         <link rel="stylesheet" href="{{ asset('css/footer.css') }}"></noscript>
 
-    <style>
-        h1{
-            margin-top: 10px;
-            margin-bottom: 249px;
-        }
-    </style>
+    
 </head>
 
 <body>

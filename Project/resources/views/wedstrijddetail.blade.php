@@ -32,6 +32,9 @@
                 <h3>{{ $wedstrijd->TeamThuisScore}}</h3>
             </div>
             <div class="col wedstrijdteam">
+            <a href="/Standen/aanpassen/{{$wedstrijd->WedstrijdID}}">
+                    <button class="btn">Wedstrijd aanpassen</button>
+                </a>
             </div>
             <div class="col wedstrijdteam">
                 <h3>{{ $wedstrijd->TeamUitScore}}</h3>

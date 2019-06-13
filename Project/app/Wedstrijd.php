@@ -10,6 +10,6 @@ class Wedstrijd extends Model
 
     protected $table = 'wedstrijden';
     protected $primaryKey = 'WedstrijdID';
-    protected $fillable = ['TeamUit','TeamThuis','Hal','Tijd','WedstrijdDatum', 'TeamThuisScore', 'TeamUitScore', 'Klasse', 'TeamThuisScore', 'TeamÚitScore'];
+    protected $fillable = ['TeamUit', 'TeamThuis', 'Hal', 'Tijd', 'WedstrijdDatum', 'Klasse', 'TeamThuisScore', 'TeamUitScore'];
     public $timestamps = false;
 }

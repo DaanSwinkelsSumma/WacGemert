@@ -35,6 +35,9 @@ class CMSController extends Controller
         // dd($request->input('TeamThuisScore'));
         // $wedstrijd = Wedstrijd::find($WedstrijdID);
         
+        $wedstrijd->Hal = Input::get('Hal');
+        $wedstrijd->Tijd = Input::get('Tijd');
+        $wedstrijd->WedstrijdDatum = Input::get('WedstrijdDatum');
         $wedstrijd->TeamThuisScore = Input::get('TeamThuisScore');
         $wedstrijd->TeamUitScore = Input::get('TeamUitScore');
         $wedstrijd->TeamThuis = Input::get('TeamThuis');
