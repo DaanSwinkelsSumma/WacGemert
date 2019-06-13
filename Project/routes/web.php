@@ -71,3 +71,8 @@ Route::patch('/Standen/update/{wedstrijd}', ['middleware' => 'auth', 'uses' => '
 //Nieuwe wedstrijd aanmaken
 Route::post('/wedstrijd/store/new', ['middleware' => 'auth', 'uses' => 'CompetitieController@newwedstrijd']);
 
+//nav naar nieuw team maken
+Route::get('/Nieuwteam', ['middleware' => 'auth', 'uses' => 'TeamController@newteampage']);
+
+//store new team in database
+Route::post('/Team/new', ['middleware' => 'auth', 'uses' => 'TeamController@storeteam']);
