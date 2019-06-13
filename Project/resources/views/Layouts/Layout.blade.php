@@ -109,7 +109,7 @@
             <div>
                 <i class="fas fa-map-marker-alt"></i>
                 <a target="blank" aria-label="Locatie"
-                    href="https://www.google.nl/maps/place/Panovenweg+20,+5708+HR+Helmond/@51.4738781,5.6267348,17z/data=!3m1!4b1!4m5!3m4!1s0x47c7214f44307933:0x16bd59b2e5452121!8m2!3d51.4738748!4d5.6289235"
+                    href="https://www.google.nl/maps/place/Zaalvoetbalvereniging+W.A.C.+Gemert/@51.5537689,5.6837826,17z/data=!3m1!4b1!4m5!3m4!1s0x47c718a3a823dad7:0xf70b5e2920d0bfd3!8m2!3d51.5537689!4d5.6859713"
                     rel="noopener">
                     <p>Gemert</p>
                 </a>
@@ -120,21 +120,13 @@
             </div>
             <div>
                 <i class="fas fa-envelope"></i>
-                <p><a href="mailto:kuijpers@kuijpers.com" aria-label="Email">info@wac-gemert.nl</a></p>
+                <p><a href="mailto:wacgemert@wacgemert.com" aria-label="Email">info@wac-gemert.nl</a></p>
             </div>
         </div>
         <div class="footer-right">
             <div class="footer-icons">
-                <a href="https://www.facebook.com/kuijpersNL/" aria-label="Facebook" target="blank"><i
+                <a href="https://nl-nl.facebook.com/WACGEMERT/" aria-label="Facebook" target="blank"><i
                         class="fab fa-facebook-f"></i></a>
-                <a href="https://twitter.com/kuijpersnl" aria-label="Twitter" target="blank"><i
-                        class="fab fa-twitter"></i></a>
-                <a href="https://www.youtube.com/user/KuijpersNL" aria-label="Youtube" target="blank"><i
-                        class="fab fa-youtube"></i></a>
-                <a href="https://nl.linkedin.com/company/kuijpers-installaties" aria-label="LinkedIn" target="blank"><i
-                        class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.instagram.com/kuijpersnl/" aria-label="Instagram" target="blank"><i
-                        class="fab fa-instagram"></i></a>
             </div>
             <div class="footer-logoff profilepage">
                 <a href="{{ url('/Logout') }}">
