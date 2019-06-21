@@ -114,6 +114,24 @@ class CompetitieController extends Controller
 
         return redirect('home');
     }
+
+    public function startgame(Wedstrijd $wedstrijd)
+    {
+
+        return view('Startwedstrijd', compact('wedstrijd'));
+    }
+    
+    public function updateuitslag(Wedstrijd $wedstrijd)
+    {
+
+        $wedstrijd->TeamThuisScore = Input::get('TeamThuisScore');
+        $wedstrijd->TeamUitScore = Input::get('TeamUitScore');
+
+        $wedstrijd->save();
+
+        return redirect('home');
+    }
+    
 }
 
 

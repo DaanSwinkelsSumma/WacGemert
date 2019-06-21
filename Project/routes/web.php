@@ -75,3 +75,10 @@ Route::get('/Nieuwteam', ['middleware' => 'auth', 'uses' => 'TeamController@newt
 
 //store new team in database
 Route::post('/Team/new', ['middleware' => 'auth', 'uses' => 'TeamController@storeteam']);
+
+Route::get('/wedstrijd/starten/{wedstrijd}', ['middleware' => 'auth', 'uses' => 'CompetitieController@startgame']);
+
+Route::post('/wedstrijd/uitslag/{wedstrijd}', ['middleware' => 'auth', 'uses' => 'CompetitieController@updateuitslag']);
+
+
+

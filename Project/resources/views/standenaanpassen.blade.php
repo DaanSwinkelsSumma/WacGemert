@@ -25,20 +25,21 @@
         <div class="row" style="text-align:center">
             <div class="col">
                 <h5 style="text-align:left">Score Thuis:</h5>
-                <input type="text" value="{{ $wedstrijd->TeamThuisScore }}" class="form-control" name="TeamThuisScore">
+                <label  class="form-control">{{ $wedstrijd->TeamThuisScore }}</label>
+                {{-- <input type="text" value="{{ $wedstrijd->TeamThuisScore }}" class="form-control" name="TeamThuisScore"> --}}
             </div>
             <div class="col">
             </div>
             <div class="col">
                 <h5 style="text-align:left">Score Uit:</h5>
-                <input type="text" value="{{ $wedstrijd->TeamUitScore }}" class="form-control" name="TeamUitScore">
+                <label  class="form-control">{{ $wedstrijd->TeamUitScore }}</label>
             </div>
         </div>
         <br>
         <div class="row" style="text-align:center">
             <div class="col">
                 <h5 style="text-align:left">Datum:</h5>
-                <input type="date" value="{{ $wedstrijd->WedstrijdDatum }}" class="form-control" name="WedstrijdDatum">
+                <input type="date" value="{{ $wedstrijd->WedstrijdDatum }}" class="form-control" name="WedstrijdDatum" re>
             </div>
             <div class="col">
             </div>

@@ -32,13 +32,31 @@
                 <h3>{{ $wedstrijd->TeamThuisScore}}</h3>
             </div>
             <div class="col wedstrijdteam">
-            <a href="/Standen/aanpassen/{{$wedstrijd->WedstrijdID}}">
-                    <button class="btn">Wedstrijd aanpassen</button>
-                </a>
+                <h3>{{ $wedstrijd->WedstrijdDatum }}</h3>
             </div>
             <div class="col wedstrijdteam">
                 <h3>{{ $wedstrijd->TeamUitScore}}</h3>
             </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col wedstrijdteam">
+                <a href="/Standen/aanpassen/{{$wedstrijd->WedstrijdID}}">
+                    <button class="btn">Wedstrijd aanpassen</button>
+                </a>
+            </div>
+            <div class="col"></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col wedstrijdteam">
+                <a href="/wedstrijd/starten/{{$wedstrijd->WedstrijdID}}">
+                    <button class="btn">Start wedstrijd</button>
+                </a>
+            </div>
+            <div class="col"></div>
         </div>
     </div>
 @endsection

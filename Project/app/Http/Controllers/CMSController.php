@@ -38,14 +38,14 @@ class CMSController extends Controller
         $wedstrijd->Hal = Input::get('Hal');
         $wedstrijd->Tijd = Input::get('Tijd');
         $wedstrijd->WedstrijdDatum = Input::get('WedstrijdDatum');
-        $wedstrijd->TeamThuisScore = Input::get('TeamThuisScore');
-        $wedstrijd->TeamUitScore = Input::get('TeamUitScore');
+        // $wedstrijd->TeamThuisScore = Input::get('TeamThuisScore');
+        // $wedstrijd->TeamUitScore = Input::get('TeamUitScore');
         $wedstrijd->TeamThuis = Input::get('TeamThuis');
         $wedstrijd->TeamUit = Input::get('TeamUit');
         // dd($wedstrijd);
         $wedstrijd->save();
 
-        return redirect('Standen');
+        return redirect('home');
     }
 }
 
